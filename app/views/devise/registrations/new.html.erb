@@ -15,10 +15,10 @@
 
       <!-- user_name -->
       <div class="form-floating mb-3">
-        <input class="form-control" id="name" type="text">
+        <%# <input class="form-control" id="name" type="text"> %>
         <%= f.label :名前, id:"name", placeholder:"名前", autofocus: true %>
+        <%= f.text_field :user_name%>
       </div>
-            
 
       <!-- User_name input-->
       <div class="form-floating mb-3">

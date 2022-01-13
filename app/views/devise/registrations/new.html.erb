@@ -8,134 +8,92 @@
       </div>
      </div>
       
-  <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-    <div class="col-lg-6">
+  <div class="row gx- gx-lg-5 justify-content-center mb-5">
+    <div class="col-lg-8 col-xl-6">
       <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
-      <%= devise_error_messages!%>
+        <%= devise_error_messages!%>
 
-      <!-- user_name -->
-      <div class="form-floating mb-3">
-        <%# <input class="form-control" id="name" type="text"> %>
-        <%= f.label :名前, id:"name", placeholder:"名前", autofocus: true %>
-        <%= f.text_field :user_name%>
-      </div>
-
-      <!-- User_name input-->
-      <div class="form-floating mb-3">
-        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-        <label for="name">名前</label>
-        <div class="invalid-feedback" data-sb-feedback="name:required"></div>
-      </div>
-      
-
-
-
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
-                        </form>
-                    </div>
-                </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                        <div>+1 (555) 123-4567</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :depart%>
+        <!-- 名前 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :名前%>
           </div>
-          <div class='field-input'>
+          <div class='px-5'>
+            <%= f.text_field :user_name, autofocus: true%>
+          </div>
+        </div>
+
+        <!-- 所属  -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :部署%>
+          </div>
+          <div class='px-5'>
             <%= f.text_field :depart, autofocus: true%>
           </div>
         </div>
 
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :position%>
+        <!-- 役職 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :役職%>
           </div>
-          <div class='field-input'>
+          <div class='px-5'>
             <%= f.text_field :position, autofocus: true%>
           </div>
         </div>
 
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :phone%>
+        <!-- 電話番号 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :直通番号%>
           </div>
-          <div class='field-input'>
+          <div class='px-5'>
             <%= f.text_field :phone, autofocus: true%>
           </div>
         </div>
 
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :email%>
+        <!-- メールアドレス -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :メールアドレス%>
           </div>
-          <div class='field-input'>
+          <div class='px-5'>
             <%= f.email_field :email%>
           </div>
         </div>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :password%>
-            <i>(英数字6文字以上)</i>
+        
+        <!-- パスワード -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :パスワード%>
+              <i>(英数字6文字以上)</i>
           </div>
-          <div class='field-input'>
+          <div class='px-5'>
             <%= f.password_field :password, autocomplete: "off"%>
           </div>
         </div>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :password_confirmation%>
+          
+        <!-- パスワード再入力 -->  
+        <div class='form-floating mb-5'>
+          <div class='px-5'>
+            <%= f.label :パスワード（再入力）%>
           </div>
-          <div class='field-input'>
+          <div class='px-5'>
             <%= f.password_field :password_confirmation, autocomplete: "off"%>
           </div>
         </div>
-        <div class='actions'>
-          <%= f.submit "Create Account", class: 'btn'%>
+
+        <!-- 登録ボタン -->
+        <div class="mb-3 px-5">
+            <%= f.submit "登録"%>
         </div>
-      </div>
+
+        <!-- キャンセルボタン -->
+        <div class="mb-3 px-5">
+            <%= f.submit "キャンセル"%>
+        </div>
       <% end %>
+    </div>
+  </div>
+</section>

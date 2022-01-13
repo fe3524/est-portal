@@ -1,0 +1,23 @@
+<div class="sb-sidenav-menu">
+    <div class="nav">
+        <div class="sb-sidenav-menu-heading">メニュー</div>
+            <!-- 新規作成 -->
+            <a class="nav-link" href="index.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-regular fa-file"></i></div>
+                新規作成
+            </a>
+
+            <!-- 一覧表示 -->
+            <a class="nav-link" href="index.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-solid fa-folder"></i></div>
+                一覧表示
+            </a>
+
+            <!-- ユーザー情報編集 -->
+            <li><%= link_to '編集', edit_user_path(current_user), class: "nav-link" %></li>
+
+            <!-- ログアウト -->
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+        </div>
+    </div>
+</div>

@@ -1,33 +1,49 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>Log in</h2>
-      <h5>登録しているユーザーでログイン</h5>
-      <%= render "devise/shared/links"%>
+<section class="page-section">
+  <div class="container px-4 px-lg-5  border">
+
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6 text-center">
+        <h2 class="mt-0">ログイン</h2>
+        <hr class="divider" />
+      </div>
     </div>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
-        <div class='field'>
-          <div class='field-label'>
+
+    <div class="row gx- gx-lg-5 justify-content-center mb-5">
+      <div class="col-lg-8 col-xl-6">
+        <%= form_with model: resource, as: resource_name, url: session_path(resource_name), local: true do |f|%>
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
             <%= f.label :email%>
           </div>
-          <div class='field-input'>
+          <div class='px-5 form-label'>
             <%= f.email_field :email, autofocus: true%>
           </div>
-          <div class='field'>
-            <div class='field-label'>
-              <%= f.label :password%>
-              <i>(英数字6文字以上)</i>
-            </div>
-            <div class='field-input'>
-              <%= f.password_field :password, autocomplete: "off"%>
-            </div>
+        </div>
+
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :password%>
+            <i>(英数字6文字以上)</i>
           </div>
-          <div class='actions'>
-            <%= f.submit "Log in", class: 'btn'%>
+          <div class='px-5'>
+            <%= f.password_field :password, autocomplete: "off"%>
           </div>
         </div>
-      <% end %>
+
+        <div class='mb-3 px-5'>
+          <button type="button" class="btn btn-outline-primary">
+            <%= f.submit "ログイン", class: 'btn'%>
+          </button>
+        </div>
+
+        <div class="mb-3 px-5">
+          <button type="button" class="btn btn-outline-secondary">
+            <%= f.submit "戻る", class: 'btn'%>
+          </button>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+</section>

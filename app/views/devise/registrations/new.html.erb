@@ -1,12 +1,12 @@
-<section class="page-section" id="contact">
-  <div class="container px-4 px-lg-5">
+<section class="page-section">
+  <div class="container px-4 px-lg-5 border">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-lg-8 col-xl-6 text-center">
         <h2 class="mt-0">Create Account</h2>
         <hr class="divider" />
         <p class="text-muted mb-5">新規アカウントの作成</p>
       </div>
-     </div>
+    </div>
       
   <div class="row gx- gx-lg-5 justify-content-center mb-5">
     <div class="col-lg-8 col-xl-6">
@@ -86,12 +86,16 @@
 
         <!-- 登録ボタン -->
         <div class="mb-3 px-5">
-            <%= f.submit "登録"%>
+          <button type="button" class="btn btn-outline-primary">
+            <%= f.submit "登録", class: 'btn'%>
+          </button>
         </div>
 
         <!-- キャンセルボタン -->
         <div class="mb-3 px-5">
-            <%= f.submit "キャンセル"%>
+          <button type="button" class="btn btn-outline-secondary">
+            <%= f.submit "キャンセル", class: 'btn'%>
+          </button>
         </div>
       <% end %>
     </div>

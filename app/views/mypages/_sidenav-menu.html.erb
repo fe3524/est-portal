@@ -3,23 +3,10 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-                    <div class="sb-sidenav-menu-heading">見積</div>
-                    <!-- 新規作成 -->
-                    <a class="nav-link" href="index.html">
-                        <div class="sb-nav-link-icon"><i class="fas fa-regular fa-file"></i></div>
-                        新規作成
-                    </a>
-
-                    <!-- 一覧表示 -->
-                    <a class="nav-link" href="index.html">
-                        <div class="sb-nav-link-icon"><i class="fas fa-solid fa-folder"></i></div>
-                        一覧表示
-                    </a>
-
-                    <!-- ユーザー情報編集 -->
+                    <div class="sb-sidenav-menu-heading">menu</div>
+                    <li><%= link_to "新規作成", '#', method: :delete, class: "nav-link" %></li>
+                    <li><%= link_to "見積一覧", '#', method: :delete, class: "nav-link" %></li>
                     <li><%= link_to '設定', edit_user_path(current_user), class: "nav-link" %></li>
-
-                    <!-- ログアウト -->
                     <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
                 </div>
             </div>

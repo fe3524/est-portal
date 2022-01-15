@@ -19,34 +19,97 @@
         <%= render 'mypages/main-top'%>
 
         <!-- メインコンテンツ -->
-        <div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
-      <h2>Edit Account</h2>
-      <h5>アカウントの編集</h5>
-      <%= link_to "ログアウト", "#", class: 'btn'%>
-      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
-    </div>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: current_user, local: true do |f|%>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :user_name%>
+
+        <div class="container px-4 px-lg-5 border">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center">
+              <h2 class="mt-0">Edit Account</h2>
+              <hr class="divider" />
+              <p class="text-muted mb-5">アカウント情報変更</p>
+            </div>
           </div>
-          <div class='field-input'>
-            <%= f.text_field :user_name, autofocus: true%>
+  
+          <div class="row gx- gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-8 col-xl-6">
+              <%= form_with model: current_user, local: true do |f|%>
+
+              <!-- 名前 -->
+              <div class='form-floating mb-3'>
+                <div class='px-5'><%= f.label :名前%></div>
+                <div class='px-5'><%= f.text_field :user_name, autofocus: true%></div>
+              </div>
+
+              <!-- 所属  -->
+              <div class='form-floating mb-3'>
+                <div class='px-5'><%= f.label :部署%></div>
+          <div class='px-5'>
+            <%= f.text_field :depart, autofocus: true%>
           </div>
         </div>
-        <div class='field'>
-          <div class='field-label'>
-            <%= f.label :email%>
+
+        <!-- 役職 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :役職%>
           </div>
-          <div class='field-input'>
+          <div class='px-5'>
+            <%= f.text_field :position, autofocus: true%>
+          </div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :直通番号%>
+          </div>
+          <div class='px-5'>
+            <%= f.text_field :phone, autofocus: true%>
+          </div>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :メールアドレス%>
+          </div>
+          <div class='px-5'>
             <%= f.email_field :email%>
           </div>
         </div>
-        <div class='actions'>
-          <%= f.submit "Update", class: 'btn'%>
+        
+        <!-- パスワード -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :パスワード%>
+              <i>(英数字6文字以上)</i>
+          </div>
+          <div class='px-5'>
+            <%= f.password_field :password, autocomplete: "off"%>
+          </div>
+        </div>
+          
+        <!-- パスワード再入力 -->  
+        <div class='form-floating mb-5'>
+          <div class='px-5'>
+            <%= f.label :パスワード（再入力）%>
+          </div>
+          <div class='px-5'>
+            <%= f.password_field :password_confirmation, autocomplete: "off"%>
+          </div>
+        </div>
+
+        <!-- 登録ボタン -->
+        <div class="mb-3 px-5">
+          <button type="button" class="btn btn-outline-primary">
+            <%= f.submit "変更", class: 'btn'%>
+          </button>
+        </div>
+
+        <!-- キャンセルボタン -->
+        <div class="mb-3 px-5">
+          <button type="button" class="btn btn-outline-secondary">
+            <%= f.submit "キャンセル", class: 'btn'%>
+          </button>
         </div>
       <% end %>
     </div>

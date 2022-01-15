@@ -1,4 +1,25 @@
-<div class='account-page' id='account-page'>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>マイページ</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="app/assets/stylesheets/mypage.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="sb-nav-fixed">
+        <%= render 'mypages/navbar'%>
+        <%= render 'mypages/sidenav-menu'%>
+        <%= render 'mypages/sidenav-footer'%>
+        <%= render 'mypages/main-top'%>
+
+        <!-- メインコンテンツ -->
+        <div class='account-page' id='account-page'>
   <div class='account-page__inner clearfix'>
     <div class='account-page__inner--left account-page__header'>
       <h2>Edit Account</h2>
@@ -31,3 +52,19 @@
     </div>
   </div>
 </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="app/javascript/mypege_scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="app/assets/mypage/chart-area-demo.js"></script>
+        <script src="app/assets/mypage/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="app/javascript/datatables-simple-demo.js"></script>
+    </body>
+
+                    </div>
+                </main>
+            <%= render 'mypages/footer'%>
+            </div>
+        </div>
+</html>

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
   resources :users, only: [:edit, :update]
-  resources :mypages, only: [:show]
+  resources :mypages, only: [:index, :new, :show]
 end

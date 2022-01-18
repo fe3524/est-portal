@@ -1,0 +1,102 @@
+<section class="page-section" id="new_account">
+  <div class="container px-4 px-lg-5 border">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6 text-center">
+        <h2 class="mt-0">Create Account</h2>
+        <hr class="divider" />
+        <p class="text-muted mb-5">新規アカウントの作成</p>
+      </div>
+    </div>
+      
+  <div class="row gx- gx-lg-5 justify-content-center mb-5">
+    <div class="col-lg-8 col-xl-6">
+      <%= form_with model: @user, url: user_registration_path, local: true do |f|%>
+
+        <!-- 名前 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :名前%>
+          </div>
+          <div class='px-5'>
+            <%= f.text_field :user_name, autofocus: true%>
+          </div>
+        </div>
+
+        <!-- 所属  -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :部署%>
+          </div>
+          <div class='px-5'>
+            <%= f.text_field :depart, autofocus: true%>
+          </div>
+        </div>
+
+        <!-- 役職 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :役職%>
+          </div>
+          <div class='px-5'>
+            <%= f.text_field :position, autofocus: true%>
+          </div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :直通番号%>
+          </div>
+          <div class='px-5'>
+            <%= f.text_field :phone, autofocus: true%>
+          </div>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :メールアドレス%>
+          </div>
+          <div class='px-5'>
+            <%= f.email_field :email%>
+          </div>
+        </div>
+        
+        <!-- パスワード -->
+        <div class='form-floating mb-3'>
+          <div class='px-5'>
+            <%= f.label :パスワード%>
+              <i>(英数字6文字以上)</i>
+          </div>
+          <div class='px-5'>
+            <%= f.password_field :password, autocomplete: "off"%>
+          </div>
+        </div>
+          
+        <!-- パスワード再入力 -->  
+        <div class='form-floating mb-5'>
+          <div class='px-5'>
+            <%= f.label :パスワード（再入力）%>
+          </div>
+          <div class='px-5'>
+            <%= f.password_field :password_confirmation, autocomplete: "off"%>
+          </div>
+        </div>
+
+        <!-- 登録ボタン -->
+        <div class="mb-3 px-5">
+          <button type="button" class="btn btn-outline-primary">
+            <%= f.submit "登録", class: 'btn'%>
+          </button>
+        </div>
+
+        <!-- キャンセルボタン -->
+        <div class="mb-3 px-5">
+          <button type="button" class="btn btn-outline-secondary">
+            <%= f.submit "キャンセル", class: 'btn'%>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

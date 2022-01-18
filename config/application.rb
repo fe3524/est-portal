@@ -21,5 +21,7 @@ module EstPortal
       g.helper false
       g.test_framework false
     end
+
+    config.eager_load_paths += %W(#{Rails.root}/lib/pdf)
   end
 end

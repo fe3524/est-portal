@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :users, only: [:edit, :update]
   resources :mypages, only: [:index, :new, :show, :create]
+  resources :post_pdf, only: :index
 end

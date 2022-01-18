@@ -12,7 +12,7 @@
 ・件名(title)
 ・納期(dl_date)
 ・提供条件(terms)
-・初期項目１(initial1_id)
+・初期項目１(initial1)
 ・初期項目１の数量(initial1_vol)
 ・初期項目１の価格(initial1_price)
 ・初期項目２(initial2_id)

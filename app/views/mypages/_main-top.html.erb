@@ -27,7 +27,7 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">設定</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <%= link_to '登録情報の編集', edit_user_path(current_user), class: "small text-white stretched-link" %>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">ログアウト</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <%= link_to "", destroy_user_session_path, method: :delete, class: "small text-white stretched-link" %>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

@@ -31,8 +31,7 @@
           <ul class="navbar-nav ms-auto my-2 my-lg-0">
             <li class="nav-item">
               <%= link_to('新規登録', new_user_registration_path, {class: "nav-link"}) %></li>
-            <li class="nav-item">
-              <%= link_to('ログイン', new_user_session_path, {class: "nav-link"}) %></li>
+            <li class="nav-item"><a class="nav-link" href="#login">ログイン</a></li>
             <li class="nav-item">
               <%= link_to('マイページ', mypages_index_path, {class: "nav-link"}) %></li>
             <li class="nav-item"><a class="nav-link" href="#contact">問い合わせ</a></li>
@@ -47,16 +46,7 @@
         <div class="row h-100 align-items-center justify-content-center text-center">
           <div class="col-lg-10 align-self-end">
             <h1 class="text-uppercase text-white font-weight-bold">
-
-              <script>
-                const nowDate = function ( date = null ) {
-                const now = date instanceof Date ? date : new Date();
-                const youbi = ["日","月","火","水","木","金","土"];
-                return `${ now.getFullYear() }年 ${ now.getMonth() + 1 }月 ${ now.getDate()  }日 (${ youbi[now.getDay()] })`;
-                };
-                document.writeln(nowDate());
-              </script>
-
+              ＃今日の日付
             </h1>
             <hr class="divider my-4"/>
           </div>
@@ -69,56 +59,24 @@
     </header>
 
     <!-- Services-->
-    <section class="page-section" id="services">
-      <div class="container px-4 px-lg-5">
-        <h2 class="text-center mt-0">At Your Service</h2>
-        <hr class="divider" />
-        <div class="row gx-4 gx-lg-5">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="mt-5">
-              <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                <h3 class="h4 mb-2">Sturdy Themes</h3>
-                <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 text-center">
-              <div class="mt-5">
-                <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                  <h3 class="h4 mb-2">Up to Date</h3>
-                  <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
-                </div>
-              </div>
-            <div class="col-lg-3 col-md-6 text-center">
-              <div class="mt-5">
-                <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                  <h3 class="h4 mb-2">Ready to Publish</h3>
-                  <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 text-center">
-                <div class="mt-5">
-                  <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                    <h3 class="h4 mb-2">Made with Love</h3>
-                    <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
-                  </div>
-                </div>
-              </div>
-      </div>
+    <% unless user_signed_in? %>
+    <section class="page-section" id="login">
+      <div class="container px-4 px-lg-5 bg-primary">
+        <h2 class="text-center mt-0">ログイン</h2>
+        <hr class="divider"/>
 
-          <% unless user_signed_in? %>
-      <%= form_with model: @user, url: user_session_path, class: 'top-session', local: true do |f| %>
-        <%= f.email_field :email, class:"top-input-signin", id:"email", placeholder:"email" %>
-        <%= f.password_field :password, class:"top-input-signin", id:"password", placeholder:"password" %>
-        <div class='top-signin-btn'>
-          <%= f.submit "sign in" ,class:"top-signin-white-btn" %>
-        </div>
-        <div class="top-info-text-signup">
-          会員登録がまだの人は<span><%= link_to "こちら", new_user_registration_path %></span>
+      <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <%= f.email_field :email, id:"email", placeholder:"email" %>
+        <%= f.password_field :password, id:"password", placeholder:"password" %>
+        <div>
+          <%= f.submit "sign in" %>
         </div>
       <% end %>
+      </div>
+
     <% end %>
-    
-        </section>
+
+    </section>
 
         <!-- Portfolio-->
         <div id="portfolio">

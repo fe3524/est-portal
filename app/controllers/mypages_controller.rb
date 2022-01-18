@@ -15,6 +15,7 @@ class MypagesController < ApplicationController
   end
 
   private
+
   def mypage_params
     params.require(:mypage).permit(
       :est_number,

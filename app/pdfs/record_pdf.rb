@@ -1,7 +1,5 @@
 class RecordPdf < Prawn::Document
-
   def initialize(record)
-
     super(
       page_size: 'A4',
       top_margin: 40,
@@ -16,7 +14,5 @@ class RecordPdf < Prawn::Document
 
     # きちんと日本語も表示されるか確認
     text 'hello こんにちは 春夏秋冬'
-
   end
-
 end

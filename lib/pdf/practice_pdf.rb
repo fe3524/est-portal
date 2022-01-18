@@ -3,11 +3,7 @@ module PracticePdf
     def initialize
 
       super(
-        page_size: 'A4',
-        top_margin: 40,
-        bottom_margin: 30,
-        left_margin: 20,
-        right_margin: 20
+        page_size: 'A4'
       )
   
       font 'app/assets/fonts/ipaexg.ttf'
@@ -16,15 +12,21 @@ module PracticePdf
   
       # 下記で作成したコンポーネントを表示順に
       header
+      corporate_logo
       move_down 50
       contents
+
     end
   
     # コンポーネント作成
     def header
-      text 'PDFのタイトル', size: 50
+      text '概算御見積', size: 25
       move_down 20
       text '作成者氏名', size: 14
+    end
+
+    def corporate_logo
+      image 'app/assets/images/logos/—Pngtree—creative company logo_1197025.png', at: [425, 780], width: 100
     end
   
     def contents

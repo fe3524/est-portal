@@ -23,9 +23,7 @@ module PracticePdf
 
     # コンポーネント作成
     def header
-
-    text "#{@users}"
-
+      
     @users.each do |user|
       text "#{user.user_name}"
     end

@@ -4,9 +4,11 @@ class PostPdfController < ApplicationController
     @users = User.all
 
     respond_to do |format|
+      format.html
       format.pdf do
-        post_pdf = PracticePdf::PostPdf.new(@mypages, @users).render
-        send_data post_pdf,
+
+        post_pdf = PracticePdf::PostPdf.new(@mypages, @users)
+        send_data post_pdf.render,
                   filename: 'post_pdf.pdf',
                   type: 'application/pdf',
                   disposition: 'inline' # 外すとダウンロード
@@ -14,5 +16,3 @@ class PostPdfController < ApplicationController
     end
   end
 end
-
-

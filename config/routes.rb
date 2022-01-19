@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pdfs/index'
+  get 'pdfs/sample_doc'
   get 'mypages/index'
   get 'top/index'
   devise_for :users

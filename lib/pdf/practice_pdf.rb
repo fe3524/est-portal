@@ -23,10 +23,7 @@ module PracticePdf
 
     # コンポーネント作成
     def header
-      
-    @users.each do |user|
-      text "#{user.user_name}"
-    end
+    
     
     text '概算御見積', size: 25
       move_down 20

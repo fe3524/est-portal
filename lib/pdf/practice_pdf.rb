@@ -1,6 +1,6 @@
 module PracticePdf
   class PostPdf < Prawn::Document
-    def initialize(mypages,users)
+    def initialize(mypages, users)
       super(
         page_size: 'A4',
         top_margin: 30,
@@ -14,13 +14,15 @@ module PracticePdf
 
       font 'app/assets/fonts/ipaexg.ttf'
 
-      stroke_axis #実装後削除
+      stroke_axis # 実装後削除
 
       # contents表示
       corporate_logo
       header
       move_down 320
-      contents
+      initial_cost
+      move_down 50
+      running_cost
     end
 
     # contents生成
@@ -50,11 +52,34 @@ module PracticePdf
       text_box '月額費用合計：¥160,000-（税込）', at: [10, 520], width: 550, height: 30, align: :right, valign: :center, size: 12
     end
 
-    def contents
+    def initial_cost
+      text_box '初期費用', at: [10, 500], width: 550, height: 30, align: :left, valign: :center, size: 14
+
       rows = [
-        ['項目','単価','数量','金額','合計'],
-        ['項目１','50,000','1','50,000','50,000']
+        [{ content: '項目', colspan: 2 }, '単価', '数量', '金額', '合計'],
+        [{ content: '項目１', colspan: 2 }, '50,000', '1', '50,000', '50,000']
+        [{ content: '項目２', colspan: 2 }, '50,000', '1', '50,000', '50,000']
+        [{ content: '項目３', colspan: 2 }, '50,000', '1', '50,000', '50,000']
       ]
+
+      table rows, cell_style: { size: 12, padding: 5 } do
+        cells.borders = %i[top left right bottom]
+        row(0).background_color = 'F5F5F5'
+      end
+    end
+
+    def running_cost
+      text_box '月額費用', at: [10, 400], width: 550, height: 30, align: :left, valign: :center, size: 14
+
+      rows = [
+        [{ content: '項目', colspan: 2 }, '単価', '数量', '金額', '合計'],
+        [{ content: '項目１', colspan: 2 }, '50,000', '1', '50,000', '50,000']
+      ]
+
+      table rows, cell_style: { size: 12, padding: 5 } do
+        cells.borders = %i[top left right bottom]
+        row(0).background_color = 'F5F5F5'
+      end
     end
   end
 end

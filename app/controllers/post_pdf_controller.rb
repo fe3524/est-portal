@@ -6,7 +6,6 @@ class PostPdfController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-
         post_pdf = PracticePdf::PostPdf.new(@mypages, @users)
         send_data post_pdf.render,
                   filename: 'post_pdf.pdf',

@@ -11,13 +11,16 @@ module PracticePdf
 
       # 下記で作成したコンポーネントを表示順に
       header
+
       corporate_logo
       move_down 50
       contents
+
     end
 
     # コンポーネント作成
     def header
+      text "#{}"
       text '概算御見積', size: 25
       move_down 20
       text '作成者氏名', size: 14

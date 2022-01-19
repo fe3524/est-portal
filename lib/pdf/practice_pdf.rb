@@ -13,6 +13,8 @@ module PracticePdf
       stroke_axis
 
       # 下記で作成したコンポーネントを表示順に
+      text '概算御見積', size: 25
+
       header
 
       corporate_logo
@@ -22,20 +24,20 @@ module PracticePdf
     end
 
     # コンポーネント作成
-    def header
-      
-    @users.each do |user|
-      text "#{user.user_name}"
+    def corporate_logo
+      image 'app/assets/images/logos/—Pngtree—creative company logo_1197025.png', at: [0, 780], width: 100
     end
-    
-    text '概算御見積', size: 25
+
+
+    def header
+      bounding_box([50, 75], width: 200, height: 300)
+      
+  
+    text '＃宛先表示　御中', size: 30
       move_down 20
       text '作成者氏名', size: 14
     end
 
-    def corporate_logo
-      image 'app/assets/images/logos/—Pngtree—creative company logo_1197025.png', at: [425, 780], width: 100
-    end
 
     def contents
       text '本文'

@@ -1,9 +1,12 @@
 module PracticePdf
   class PostPdf < Prawn::Document
-    def initialize
+    def initialize(mypages,users)
       super(
         page_size: 'A4'
       )
+
+      @mypages = mypages
+      @users = users
 
       font 'app/assets/fonts/ipaexg.ttf'
 
@@ -20,8 +23,14 @@ module PracticePdf
 
     # コンポーネント作成
     def header
-      text "#{}"
-      text '概算御見積', size: 25
+
+    text "#{@users}"
+
+    @users.each do |user|
+      text "#{user.user_name}"
+    end
+    
+    text '概算御見積', size: 25
       move_down 20
       text '作成者氏名', size: 14
     end
@@ -37,6 +46,7 @@ module PracticePdf
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+
     end
   end
 end

@@ -1,6 +1,6 @@
 module PracticePdf
   class PostPdf < Prawn::Document
-    def initialize(mypages, users)
+    def initialize # (mypages, users)
       super(
         page_size: 'A4',
         top_margin: 30,
@@ -9,8 +9,8 @@ module PracticePdf
         right_margin: 20
       )
 
-      @mypages = mypages
-      @users = users
+      # @mypages = mypages
+      # @users = users
 
       font 'app/assets/fonts/ipaexg.ttf'
 
@@ -24,6 +24,7 @@ module PracticePdf
       move_down 50
       running_cost
       move_down 50
+
     end
 
     # contents生成
@@ -57,20 +58,21 @@ module PracticePdf
       text_box '初期費用', at: [10, 500], width: 550, height: 30, align: :left, valign: :center, size: 14
 
       rows = [
-        [{ content: '項目', colspan: 2 }, '単価', '数量', '金額', '合計'],
-        [{ content: '項目１', colspan: 2 }, '50,000', '1', '50,000', '50,000'],
-        [{ content: '項目２', colspan: 2 }, '50,000', '1', '50,000', '50,000'],
-        [{ content: '項目３', colspan: 2 }, '50,000', '1', '50,000', '50,000']
+        [{ content: '項目　　　　　　　　　　　　　　　　　', colspan: 2 }, '　単　価　', '　数　量　', '　金　額　', '　合　計　'],
+        [{ content: '項目１　　　　　　　　　　　　　　　　　', colspan: 2 }, '50,000', '1', '50,000', '50,000'],
+        [{ content: '項目２　　　　　　　　　　　　　　　　　', colspan: 2 }, '50,000', '1', '50,000', '50,000'],
+        [{ content: '項目３　　　　　　　　　　　　　　　　　', colspan: 2 }, '50,000', '1', '50,000', '50,000']
       ]
 
       table rows, cell_style: { size: 12, padding: 5 } do
         cells.borders = %i[top left right bottom]
         row(0).background_color = 'F5F5F5'
+        row(0).align = :center
       end
     end
 
     def running_cost
-      text_box '月額費用', at: [10, 400], width: 550, height: 30, align: :left, valign: :center, size: 14
+      text_box '月額費用', at: [10, 350], width: 550, height: 30, align: :left, valign: :center, size: 14
 
       rows = [
         [{ content: '項目', colspan: 2 }, '単価', '数量', '金額', '合計'],

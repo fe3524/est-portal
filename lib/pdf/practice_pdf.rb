@@ -23,6 +23,7 @@ module PracticePdf
       initial_cost
       move_down 50
       running_cost
+      move_down 50
     end
 
     # contents生成
@@ -57,8 +58,8 @@ module PracticePdf
 
       rows = [
         [{ content: '項目', colspan: 2 }, '単価', '数量', '金額', '合計'],
-        [{ content: '項目１', colspan: 2 }, '50,000', '1', '50,000', '50,000']
-        [{ content: '項目２', colspan: 2 }, '50,000', '1', '50,000', '50,000']
+        [{ content: '項目１', colspan: 2 }, '50,000', '1', '50,000', '50,000'],
+        [{ content: '項目２', colspan: 2 }, '50,000', '1', '50,000', '50,000'],
         [{ content: '項目３', colspan: 2 }, '50,000', '1', '50,000', '50,000']
       ]
 

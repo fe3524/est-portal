@@ -1,6 +1,6 @@
 module PracticePdf
   class PostPdf < Prawn::Document
-    def initialize # (mypages, users)
+    def initialize(mypages, users)
       super(
         page_size: 'A4',
         top_margin: 30,
@@ -9,8 +9,8 @@ module PracticePdf
         right_margin: 20
       )
 
-      # @mypages = mypages
-      # @users = users
+      @mypages = mypages
+      @users = users
 
       font 'app/assets/fonts/ipaexg.ttf'
 
@@ -24,6 +24,11 @@ module PracticePdf
       move_down 50
       running_cost
       move_down 50
+
+      @mypages.each do |m|
+      text_box "#{m.exp_date}"
+    end
+    
 
     end
 

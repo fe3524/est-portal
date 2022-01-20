@@ -6,7 +6,9 @@
   <%= render 'masthead' %>
 
   <!-- NewAccount-->
+  <% unless user_signed_in? %>
   <%= render 'new_account' %>
+  <% end %>
 
   <!-- Footer-->
   <footer class="bg-light py-5">

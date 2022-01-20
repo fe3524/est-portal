@@ -5,8 +5,11 @@
 ・見積書（Estimate）を作成するための入り口（Portal）
 
 ## アプリケーション概要
+・アカウント作成後、見積を作成しPDFとして出力する
 
 ## URL
+[EST-Portal - Heroku](https://est-portal.herokuapp.com/)
+
 
 ## テスト用アカウント
 

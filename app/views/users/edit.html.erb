@@ -16,7 +16,7 @@
   
     <div class="row gx- gx-lg-5 justify-content-center mb-5">
       <div class="col-lg-8 col-xl-6">
-        <%= form_with model: current_user, local: true do |f|%>
+        <%= form_with model: current_user, local: true do |f| %>
 
           <!-- 名前 -->
           <div class='form-floating mb-3'>
@@ -76,12 +76,6 @@
           <div class="mb-3 px-5">
             <button type="button" class="btn btn-outline-primary">
               <%= f.submit "変更", class: 'btn'%></button>
-          </div>
-
-          <!-- キャンセルボタン -->
-          <div class="mb-3 px-5">
-            <button type="button" class="btn btn-outline-secondary">
-              <%= f.submit "キャンセル", class: 'btn'%></button>
           </div>
         <% end %>
       </div>

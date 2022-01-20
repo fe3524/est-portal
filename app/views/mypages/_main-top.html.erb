@@ -21,7 +21,7 @@
             <div class="card bg-secondary text-white mb-4">
                 <div class="card-body">見積一覧</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="#">作成した見積一覧</a>
+                    <%= link_to '作成した見積一覧', user_path(current_user), class: "small text-white stretched-link" %>  
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>

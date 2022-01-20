@@ -5,106 +5,208 @@
     <%= render 'main-top'%>
 
 <!-- メインコンテンツ -->
-<div class="container px-4 px-lg-5 border">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-lg-8 col-xl-6 text-center">
-            <h2 class="mt-0">New Estimate</h2>
-            <hr class="divider" />
-            <p class="text-muted mb-5">新規見積作成</p>
-        </div>
-    </div>
+<h2>新規見積作成</h2>
 
-    <div class="row gx- gx-lg-5 justify-content-center mb-5">
-        <div class="col-lg-8 col-xl-6">
-        <%= form_with model: @mypage, local: true do |f| %>
+<%= form_with model: @mypage, local: true do |f| %>
+<!-- 基本情報 -->
+<table class="table">
+<thead>
+<tr>
+<th scope="col">見積管理番号</th>
+<th scope="col">発行日</th>
+<th scope="col">有効期限</th>
+<th scope="col">納期</th>
+<th scope="col">提供条件</th>
+<th>
+</tr>
+</thead>
 
-        <h3 class="mt-0">見積情報</h3>
+<tbody>
+<tr>
+<td><%= f.text_field :est_number %></td>
+<td><%= f.text_field :issue_date %></td>
+<td><%= f.text_field :exp_date %></td>
+<td><%= f.text_field :dl_date %></td>
+<td><%= f.text_field :terms %></td>
+</tr>
+<tbody>
+</table>
+
+<!-- 宛先・件名 -->
+<table class="table">
+<thead>
+<tr>
+<th scope="col">宛　先<br><%= f.text_field :destination, size: 55 %></th>
+<th scope="col">件　名<br><%= f.text_field :title, size: 55 %></th>
+</tr>
+</thead>
+</table>
+<br>
+
+<!-- 初期費用 -->
+<h3>初期費用</h3>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">項　目</th>
+<th scope="col">数　量</th>
+<th scope="col">単　価</th>
+<th scope="col">合　計</th>
+<th scope="col">備　考</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><%= f.text_field :initial1, size:35 %></td>
+<td><%= f.text_field :initial1_vol, size:10 %></td>
+<td><%= f.text_field :initial1_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :initial1_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :initial2, size:35 %></td>
+<td><%= f.text_field :initial2_vol, size:10 %></td>
+<td><%= f.text_field :initial2_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :initial2_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :initial3, size:35 %></td>
+<td><%= f.text_field :initial3_vol, size:10 %></td>
+<td><%= f.text_field :initial3_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :initial3_memo, size:35 %></td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<!-- 月額費用 -->
+<h3>月額費用</h3>
+<table class="table">
+<thead>
+<tr>
+<th scope="col">項　目</th>
+<th scope="col">数　量</th>
+<th scope="col">単　価</th>
+<th scope="col">合　計</th>
+<th scope="col">備　考</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><%= f.text_field :run1, size:35 %></td>
+<td><%= f.text_field :run1_vol, size:10 %></td>
+<td><%= f.text_field :run1_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :run1_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run2, size:35 %></td>
+<td><%= f.text_field :run2_vol, size:10 %></td>
+<td><%= f.text_field :run2_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :run2_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run3, size:35 %></td>
+<td><%= f.text_field :run3_vol, size:10 %></td>
+<td><%= f.text_field :run3_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :run3_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run4, size:35 %></td>
+<td><%= f.text_field :run4_vol, size:10 %></td>
+<td><%= f.text_field :run4_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :run4_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run5, size:35 %></td>
+<td><%= f.text_field :run5_vol, size:10 %></td>
+<td><%= f.text_field :run5_price, size:10 %></td>
+<td></td>
+<td><%= f.text_field :run5_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run6, size:35 %></td>
+<td><%= f.text_field :run6_vol, size:10 %></td>
+<td><%= f.text_field :run6_price, size:10 %></td>
+<td><%= f.text_field :run6_price, size:10 %></td>
+<td><%= f.text_field :run6_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run7, size:35 %></td>
+<td><%= f.text_field :run7_vol, size:10 %></td>
+<td><%= f.text_field :run7_price, size:10 %></td>
+<td><%= f.text_field :run7_price, size:10 %></td>
+<td><%= f.text_field :run7_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run8, size:35 %></td>
+<td><%= f.text_field :run8_vol, size:10 %></td>
+<td><%= f.text_field :run8_price, size:10 %></td>
+<td><%= f.text_field :run8_price, size:10 %></td>
+<td><%= f.text_field :run8_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run9, size:35 %></td>
+<td><%= f.text_field :run9_vol, size:10 %></td>
+<td><%= f.text_field :run9_price, size:10 %></td>
+<td><%= f.text_field :run9_price, size:10 %></td>
+<td><%= f.text_field :run9_memo, size:35 %></td>
+</tr>
+
+<tr>
+<td><%= f.text_field :run3, size:35 %></td>
+<td><%= f.text_field :run3_vol, size:10 %></td>
+<td><%= f.text_field :run3_price, size:10 %></td>
+<td><%= f.text_field :run3_price, size:10 %></td>
+<td><%= f.text_field :run3_memo, size:35 %></td>
+</tr>
+</tbody>
+</table>
+
+<button type="button" class="btn btn-outline-primary">
+<%= f.submit "作成", class: 'btn'%></button>
+<% end %>
+
+
+
+        <%# <h3>月額費用</h3>
+
         <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :見積管理番号%></div>
-            <div class='px-5'><%= f.text_field :est_number %></div>
-        </div>
+            <div class='px-5'><%= f.label :項目１%>
+            <%# <div class='px-5'><%= f.text_field :run1 %>
+        <%# </div>
 
         <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :発行日%></div>
-            <div class='px-5'><%= f.text_field :issue_date %></div>
-        </div>
+            <div class='px-5'><%= f.label :数量%>
+            <%# <div class='px-5'><%= f.text_field :run1_vol %>
+        <%# </div> %>
+
+        <%# <div class='form-floating mb-3'> %>
+            <%# <div class='px-5'><%= f.label :単価%>
+            <%# <div class='px-5'><%= f.text_field :run1_price %>
+        <%# </div>
 
         <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :有効期限%></div>
-            <div class='px-5'><%= f.text_field :exp_date %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :宛先%></div>
-            <div class='px-5'><%= f.text_field :destination %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :件名%></div>
-            <div class='px-5'><%= f.text_field :title %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :納期%></div>
-            <div class='px-5'><%= f.text_field :dl_date %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :提供条件%></div>
-            <div class='px-5'><%= f.text_field :terms %></div>
-        </div>
-
-        <h3>初期費用</h3>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :項目１%></div>
-            <div class='px-5'><%= f.text_field :initial1 %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :数量%></div>
-            <div class='px-5'><%= f.text_field :initial1_vol %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :単価%></div>
-            <div class='px-5'><%= f.text_field :initial1_price %></div>
-        </div>
-
-        <div class='form-floating mb-3'>    
-            <div class='px-5'><%= f.label :備考%></div>
-            <div class='px-5'><%= f.text_field :initial1_memo %></div>
-        </div>
-
-        <h3>月額費用</h3>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :項目１%></div>
-            <div class='px-5'><%= f.text_field :run1 %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :数量%></div>
-            <div class='px-5'><%= f.text_field :run1_vol %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :単価%></div>
-            <div class='px-5'><%= f.text_field :run1_price %></div>
-        </div>
-
-        <div class='form-floating mb-3'>
-            <div class='px-5'><%= f.label :備考%></div>
-            <div class='px-5'><%= f.text_field :run1_memo %></div>
-        </div>
-
-        <div class="mb-3 px-5">
-            <button type="button" class="btn btn-outline-primary">
-            <%= f.submit "作成", class: 'btn'%></button>
-        </div>
-        <% end %>
-    </div>
- </div>
+            <div class='px-5'><%= f.label :備考%>
+            <%# <div class='px-5'><%= f.text_field :run1_memo %>
+        <%# </div> %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="app/javascript/mypege_scripts.js"></script>

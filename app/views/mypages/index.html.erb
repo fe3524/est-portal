@@ -5,40 +5,8 @@
 <%= render 'main-top'%>
 
 <!-- メインコンテンツ -->
-<h2><%= "#{current_user.depart}　最新見積一覧" %></h2>
+<%= render 'est_show_all' %>
 
-<table class="table">
-<thead>
-<tr>
-<th scope="col">見積管理番号</th>
-<th scope="col">発行日</th>
-<th scope="col">宛先</th>
-<th scope="col">件名</th>
-<th scope="col">提供条件</th>
-<th scope="col">詳細</th>
-<th scope="col">PDF出力</th>
-<th>
-</tr>
-</thead>
-
-<tbody>
-<% @mypages.each do |m| %>
-<tr>
-<th scope="row"><%= m.est_number %></th>
-<td><%= m.issue_date %></td>
-<td><%= m.destination %></td>
-<td><%= m.title %></td>
-<td><%= m.terms %></td>
-<td><button type="button" class="btn btn-outline-primary">
-<%= link_to "詳細", '#' %></td>
-<td><button type="button" class="btn btn-outline-primary">
-<%= link_to "表示", post_pdf_index_path(format: "pdf"), target: :_blank, rel: "noopener noreferrer" %></button></td>
-</tr>
-<% end %>
-<tbody>
-</table>
-</div>
-
-    <script src="app/javascript/mypege_scripts.js"></script>
+<script src="app/javascript/mypege_scripts.js"></script>
 </body>
 <%= render 'footer'%>

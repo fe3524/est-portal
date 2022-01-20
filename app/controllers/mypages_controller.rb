@@ -73,6 +73,6 @@ class MypagesController < ApplicationController
       :run9_vol,
       :run9_price,
       :run9_memo
-    )
+    ).merge(user_id: current_user.id)
   end
 end

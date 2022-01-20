@@ -21,6 +21,7 @@
 ## 実装予定機能
 
 ## データベース設計
+
 ### MyPages
 | Column         | Type       | Options     |
 | ---------------| ---------- | ----------- |
@@ -64,4 +65,7 @@
 ### Association
 - belongs_to :mypage
 - belong_to :user
+
+[![Image from Gyazo](https://i.gyazo.com/2ae050f01c29c45bc8f3a248691d49d5.png)](https://gyazo.com/2ae050f01c29c45bc8f3a248691d49d5)
+
 ***

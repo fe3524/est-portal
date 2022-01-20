@@ -1,18 +1,14 @@
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="app/assets/stylesheets/mypage.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-    </head>
+<body class="sb-nav-fixed">
+    <%= render 'navbar'%>
+    <%= render 'sidenav-menu'%>
+    <%= render 'sidenav-footer'%>
+    <%= render 'main-top'%>
 
-    <body class="sb-nav-fixed">
-        <%= render 'navbar'%>
-        <%= render 'sidenav-menu'%>
-        <%= render 'sidenav-footer'%>
-        <%= render 'main-top'%>
+    <!-- メインコンテンツ -->
+    <h1>アカウントの作成見積一覧表示</h1>
+    <%= link_to "PDFを表示", post_pdf_index_path(format: "pdf") %>
 
-        <!-- メインコンテンツ -->
-        <h1>アカウントの作成見積一覧表示</h1>
-        <%= link_to "PDFを表示", post_pdf_index_path(format: "pdf") %>
+    <script src="app/javascript/mypege_scripts.js"></script>
+</body>
 
-        <script src="app/javascript/mypege_scripts.js"></script>
-    </body>
-    <%= render 'footer'%>
+<%= render 'footer'%>

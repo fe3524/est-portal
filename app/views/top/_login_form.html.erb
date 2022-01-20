@@ -1,12 +1,12 @@
 <% unless user_signed_in? %>
   <section class="page-section" id="login">
-    <div class="container px-4 px-lg-5 bg-primary">
-      <h2 class="text-center mt-0">ログイン</h2>
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center text-warning mt-0">LOGIN</h2>
 
       <hr class="divider"/>
 
       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-        <%= f.email_field :email, id:"email", placeholder:"email" %>
+        <%= f.email_field :email, id:"email", placeholder:"email" %><br>
         <%= f.password_field :password, id:"password", placeholder:"password" %>
         <div>
           <%= f.submit "sign in" %>

@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def show
+    @user = current_user.user_name
+    @mypages = current_user.mypages
+  end
+
   def edit
   end
 

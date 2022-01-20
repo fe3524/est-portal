@@ -26,10 +26,8 @@ module PracticePdf
       move_down 50
 
       @mypages.each do |m|
-      text_box "#{m.exp_date}"
-    end
-    
-
+        text_box m.exp_date.to_s
+      end
     end
 
     # contents生成

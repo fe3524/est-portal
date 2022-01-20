@@ -1,6 +1,38 @@
 # README
 
-## MyPages
+## アプリケーション名
+---
+### 【EST-Portal】
+・見積書（Estimate）を作成するための入り口（Portal）
+***
+
+## アプリケーション概要
+---
+
+## URL
+---
+
+## テスト用アカウント
+---
+
+## 利用方法
+---
+
+## 目指した課題解決
+---
+
+## 洗い出した要件
+---
+
+## 実装した機能
+---
+
+## 実装予定機能
+---
+
+## データベース設計
+---
+### MyPages
 | Column         | Type       | Options     |
 | ---------------| ---------- | ----------- |
 | est_number     | string     | null: false |
@@ -43,3 +75,4 @@
 ### Association
 - belongs_to :mypage
 - belong_to :user
+***

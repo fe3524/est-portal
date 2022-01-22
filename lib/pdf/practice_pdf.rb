@@ -1,6 +1,6 @@
 module PracticePdf
   class PostPdf < Prawn::Document
-    def initialize #(mypages, users)
+    def initialize # (mypages, users)
       super(
         page_size: 'A4',
         top_margin: 30,
@@ -33,7 +33,6 @@ module PracticePdf
       image 'app/assets/images/logos/stamp.png', at: [520, 600], width: 40
     end
 
-
     def header
       text_box '概 算 御 見 積', at: [0, 780], width: 550, height: 30, align: :center, valign: :center, size: 18
       text_box '2022年1月20日', at: [0, 740], width: 550, height: 30, align: :right, valign: :center, size: 9
@@ -52,7 +51,6 @@ module PracticePdf
       text_box '導入納期：通常６ヶ月', at: [10, 580], width: 550, height: 30, align: :left, valign: :center, size: 12
       text_box '見積期限：１ヶ月', at: [10, 560], width: 550, height: 30, align: :left, valign: :center, size: 12
       text_box '提供条件：約款／特約適用', at: [10, 540], width: 550, height: 30, align: :left, valign: :center, size: 12
-
 
       text_box '初期費用合計：　¥158,000-（税込）', at: [10, 540], width: 550, height: 30, align: :right, valign: :center, size: 12
       text_box '月額費用合計：¥7,055,000-（税込）', at: [10, 520], width: 550, height: 30, align: :right, valign: :center, size: 12

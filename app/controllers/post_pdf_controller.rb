@@ -6,7 +6,7 @@ class PostPdfController < ApplicationController
       format.pdf do
         post_pdf = PracticePdf::PostPdf.new
         send_data post_pdf.render,
-                  filename: 'post_pdf.pdf',
+                  filename: '20220120_知多工業様_概算御見積.pdf',
                   type: 'application/pdf',
                   disposition: 'inline' # 外すとダウンロード
       end

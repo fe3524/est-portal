@@ -11,7 +11,7 @@ module PracticePdf
 
       font 'app/assets/fonts/ipaexg.ttf'
 
-      stroke_axis
+      # stroke_axis 
 
       # contents表示
       corporate_logo

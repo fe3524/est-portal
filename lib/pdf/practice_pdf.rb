@@ -21,7 +21,7 @@ module PracticePdf
       initial_cost
       move_down 50
       running_cost
-      move_down 50
+      move_down 55
     end
 
     # contents生成
